@@ -58,10 +58,10 @@
                     <div class="calc-top-result row">
                         <input type="text" class="col-12" id="result" placeholder="0" disabled></input>
                     </div>
-                    <div class="calc-top-result-converter converter row align-items-center" style="display:none;">
-                        <input type="number" class="col-5" id="valueToConvert" placeholder="0" disabled></input>
+                    <div class="calc-top-result-converter converter row align-items-center d-none">
+                        <input type="text" class="col-5" id="valueToConvert" placeholder="0" disabled></input>
                         <span class="col-2 text-center">=</span>
-                        <input type="number" class="col-5" id="valueConverted" placeholder="0" disabled></input>
+                        <input type="text" class="col-5" id="valueConverted" placeholder="0" disabled></input>
                         <span class="col-5 small-text text-center">Pascal</span>
                         <span class="col-2 small-text text-center"></span>
                         <span class="col-5 small-text text-center">Bar</span>
@@ -75,11 +75,11 @@
                     <div class="container">
                         <div class="row">
                             <input class="col" type="button" value="TEMPERATURA" id="function" onclick="reset()">
-                            <input class="col" type="button" value="PRESIÓN" id="function" onclick="calc()">
+                            <input class="col" type="button" value="PRESIÓN" id="function" onclick="convertPressure()">
                         </div>
                         <div class="row">
                             <input class="col" type="button" value="MASA" id="function" onclick="reset()">
-                            <input class="col" type="button" value="LONGITUD" id="function" onclick="calc()">
+                            <input class="col" type="button" value="LONGITUD" id="function" onclick="reset()">
                         </div>
                         <div class="row">
                             <input class="col" type="button" value="7" onclick="input('7')">
@@ -122,5 +122,6 @@
 
     <!-- Link Script Js -->
     <script src="script.js"></script>
+    <script src="presion.js"></script>
 </body>
 </html>
