@@ -6,6 +6,7 @@
 
 // get the result element
 let result  = document.getElementById("result");
+let temp  = document.getElementById("temp");
 
 // Input numbers by key pressed
 function input(num){
@@ -130,5 +131,10 @@ function myFunction_set(val) {
     else{
         theme.dark();
     } 
+
+    //
+    temp.addEventListener("click",()=>{
+        console.log("hola");
+    })
   
 }
