@@ -1,15 +1,12 @@
-// 1m*(100cm/1m)
-// (1cm*1m)/100cm
+// Function to convert length (metro to cm)
+function convertLength() {
+    resultConverted.value = "";
+    result.parentElement.classList.add("d-none");
+    result  = document.getElementById("valueToConvert");
+    result.parentElement.classList.remove("d-none");
+    typeFunction = "length";
+}
 
-let metros = document.getElementById('metros');
-let cm = document.getElementById('cm');
-
-metros.oninput = () => {
-    let output = (parseFloat(metros.value)*(100/1));
-    cm.value = parseFloat(output.toFixed(2));
-};
-
-cm.oninput = () => {
-    let output = (parseFloat(cm.value)*1/100);
-    metros.value = parseFloat(output.toFixed(2));
-};
+function calcLength(value) {
+    return eval(value * 100);
+}
