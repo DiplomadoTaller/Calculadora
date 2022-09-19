@@ -1,8 +1,8 @@
-// Function to convert pressure (pascal to bar)
+
 function convertLength() {
     resultConverted.value = "";
     result.parentElement.classList.add("d-none");
-    result  = document.getElementById("valueToConvert");
+    result  = document.getElementById("valueToConvertLength");
     result.parentElement.classList.remove("d-none");
     typeFunction = "length";
 }

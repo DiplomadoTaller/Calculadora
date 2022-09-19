@@ -66,20 +66,33 @@
                         <span class="col-2 small-text text-center"></span>
                         <span class="col-5 small-text text-center">Bar</span>
                     </div>
+                    <div class="calc-top-result-converter converter longitud row align-items-center d-none">
+                        <input type="text" class="col-5" id="valueToConvertLength" placeholder="0" disabled></input>
+                        <span class="col-2 text-center">=</span>
+                        <input type="text" class="col-5" id="valueConvertedLength" placeholder="0" disabled></input>
+                        <span class="col-5 small-text text-center">Metro</span>
+                        <span class="col-2 small-text text-center"></span>
+                        <span class="col-5 small-text text-center">Centimetro</span>
+                    </div>
                 </div>
 
                 <!-- Bottom of the Calculator -->
                 <div class="calc-keys">
-
+                   
                     <!-- All the Keys/Buttons for the Calculator Works -->
+                    <!-- <button id="temp">Temperatura</button> -->
+                    <!-- <a class="btn btn-primary" href="funciones/index.html">Temperatura</a> -->
                     <div class="container">
                         <div class="row">
-                            <input class="col" type="button" value="TEMPERATURA" id="function" onclick="reset()">
-                            <input class="col" type="button" value="PRESIÓN" id="function" onclick="reset()">
+
+                          
+                            <a class="btn btn-primary" href="funciones/index.html">Temperatura</a>
+                            <input class="col" type="button" value="PRESIÓN" id="function" onclick="convertPressure()">
                         </div>
                         <div class="row">
-                            <input class="col" type="button" value="MASA" id="function" onclick="reset()">
+                            <a href="masa/masa.html" class="btn btn-primary">MASA</a>
                             <input class="col" type="button" value="LONGITUD" id="function" onclick="convertLength()">
+
                         </div>
                         <div class="row">
                             <input class="col" type="button" value="7" onclick="input('7')">
@@ -123,5 +136,6 @@
     <!-- Link Script Js -->
     <script src="script.js"></script>
     <script src="Longitud.js"></script>
+    <script src="presion.js"></script>
 </body>
 </html>

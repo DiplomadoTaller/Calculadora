@@ -11,13 +11,24 @@ var resultConverted = document.getElementById("valueConverted");
 // Type function
 var typeFunction = null;
 
+let temp  = document.getElementById("temp");
+
+
 // Input numbers by key pressed
 function input(num){
     let number = result.value;
     result.value = number + num;
 
-    if (typeFunction === "length") {
-        let newResult = calcLength(eval(result.value));
+   
+    if (typeFunction === "pressure") {
+        resultConverted = document.getElementById("valueConverted");
+        let newResult = calcPressure(eval(result.value));
+        newResult = (newResult !== undefined) ? newResult : "";
+        resultConverted.value = newResult;
+    }
+    else if (typeFunction === "length") {
+        resultConverted = document.getElementById("valueConvertedLength");
+        newResult = calcLength(eval(result.value));
         newResult = (newResult !== undefined) ? newResult : "";
         resultConverted.value = newResult;
     }
@@ -50,6 +61,11 @@ function del(){
 
     if (typeFunction === "pressure") {
         let newResult = calcPressure(eval(result.value));
+        newResult = !isNaN(newResult) ? newResult : "";
+        resultConverted.value = newResult;
+    }
+    if (typeFunction === "length") {
+        let newResult = calcLength(eval(result.value));
         newResult = !isNaN(newResult) ? newResult : "";
         resultConverted.value = newResult;
     }
@@ -151,5 +167,10 @@ function myFunction_set(val) {
     else{
         theme.dark();
     } 
+
+    //
+    temp.addEventListener("click",()=>{
+        console.log("hola");
+    })
   
 }
