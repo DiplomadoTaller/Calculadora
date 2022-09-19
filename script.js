@@ -5,12 +5,23 @@
 */ 
 
 // get the result element
-let result  = document.getElementById("result");
+var result  = document.getElementById("result");
+var resultConverted = document.getElementById("valueConverted");
+
+// Type function
+var typeFunction = null;
+let temp  = document.getElementById("temp");
 
 // Input numbers by key pressed
 function input(num){
     let number = result.value;
     result.value = number + num;
+
+    if (typeFunction === "pressure") {
+        let newResult = calcPressure(eval(result.value));
+        newResult = (newResult !== undefined) ? newResult : "";
+        resultConverted.value = newResult;
+    }
 }
 
 // Calculator logic
@@ -26,12 +37,23 @@ function calc(){
 // Reset button
 function reset(){
     result.value = "";
+    resultConverted.value = "";
+    result.parentElement.classList.add("d-none");
+    result = document.getElementById("result");
+    result.parentElement.classList.remove("d-none");
+    result.value = "";
 }
 
 // Del button
 function del(){
     let result2  = result.value;
     result.value = result2.substring(0, result2.length - 1);
+
+    if (typeFunction === "pressure") {
+        let newResult = calcPressure(eval(result.value));
+        newResult = !isNaN(newResult) ? newResult : "";
+        resultConverted.value = newResult;
+    }
 }
 
 /*
@@ -130,5 +152,10 @@ function myFunction_set(val) {
     else{
         theme.dark();
     } 
+
+    //
+    temp.addEventListener("click",()=>{
+        console.log("hola");
+    })
   
 }
